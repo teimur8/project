@@ -1,0 +1,3 @@
+
+
+Route::resource('users', 'UserController');

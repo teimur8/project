@@ -53,3 +53,6 @@ axios.interceptors.response.use(response => response, error => {
 
   return Promise.reject(error)
 })
+
+
+window.axios = axios;

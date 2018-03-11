@@ -9,6 +9,10 @@ const Settings = () => import('~/pages/settings/index')
 const SettingsProfile = () => import('~/pages/settings/profile')
 const SettingsPassword = () => import('~/pages/settings/password')
 
+const Users = () => import('~/pages/admin/users/index.vue')
+const UsersTable = () => import('~/pages/admin/users/table.vue')
+const UsersCreate = () => import('~/pages/admin/users/create.vue')
+
 export default [
   { path: '/', name: 'welcome', component: Welcome },
 
@@ -22,6 +26,11 @@ export default [
     { path: '', redirect: { name: 'settings.profile' }},
     { path: 'profile', name: 'settings.profile', component: SettingsProfile },
     { path: 'password', name: 'settings.password', component: SettingsPassword }
+  ] },
+
+  { path: '/users', component: Users, children: [
+    { path: '', name: 'users.table', component: UsersTable },
+    { path: 'create', name: 'users.create', component: UsersCreate },
   ] },
 
   { path: '*', component: require('~/pages/errors/404') }

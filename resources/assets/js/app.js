@@ -9,6 +9,10 @@ import '~/components'
 
 Vue.config.productionTip = false
 
+import {ServerTable, ClientTable, Event} from 'vue-tables-2';
+Vue.use(ClientTable);
+Vue.use(ServerTable);
+
 new Vue({
   i18n,
   store,

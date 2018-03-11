@@ -14,10 +14,14 @@
 
       <div class="collapse navbar-collapse" id="navbarToggler">
         <ul class="navbar-nav">
-          <locale-dropdown/>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li> -->
+          <!-- <locale-dropdown/> -->
+          <li class="nav-item">
+              <router-link :to="{ name: 'users.table' }" class="dropdown-item pl-3">
+                <fa icon="cog" fixed-width/>
+               {{ $t('users.table') }}
+              </router-link>
+          </li>
+          
         </ul>
 
         <ul class="navbar-nav ml-auto">
