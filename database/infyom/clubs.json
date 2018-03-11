@@ -32,11 +32,6 @@
         "searchable": true
     },
     {
-        "name": "users",
-        "type": "relation",
-        "relation": "btm,Users"
-    },
-    {
         "name": "created_at",
         "dbType": "timestamp",
         "htmlType": "",

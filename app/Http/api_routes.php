@@ -1,2 +1,5 @@
 
 
+
+
+Route::resource('clubs', 'ClubAPIController');
