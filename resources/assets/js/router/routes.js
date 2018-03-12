@@ -17,6 +17,10 @@ const Clubs = () => import('~/pages/clubs/index.vue')
 const ClubsTable = () => import('~/pages/clubs/table.vue')
 const ClubsForm = () => import('~/pages/clubs/form.vue')
 
+const Tables = () => import('~/pages/tables/index.vue')
+const TablesTable = () => import('~/pages/tables/table.vue')
+const TablesForm = () => import('~/pages/tables/form.vue')
+
 export default [
   { path: '/', name: 'welcome', component: Welcome },
 
@@ -37,11 +41,16 @@ export default [
     { path: 'create', name: 'users.create', component: UsersCreate },
   ] },
 
-
   { path: '/clubs', component: Clubs, children: [
     { path: '', name: 'clubs.table', component: ClubsTable },
     { path: 'create', name: 'clubs.create', component: ClubsForm },
     { path: 'edite/:id', name: 'clubs.edit', component: ClubsForm },
+  ] },
+
+  { path: '/tables', component: Tables, children: [
+    { path: '', name: 'tables.table', component: TablesTable },
+    { path: 'create', name: 'tables.create', component: TablesForm },
+    { path: 'edite/:id', name: 'tables.edit', component: TablesForm },
   ] },
 
   { path: '*', component: require('~/pages/errors/404') }

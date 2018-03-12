@@ -12,6 +12,7 @@ use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use App\Http\Models\EloquentVueTables;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Class ClubController
@@ -58,6 +59,9 @@ class ClubAPIController extends AppBaseController
         $input = $request->all();
 
         $clubs = $this->clubRepository->create($input);
+
+        $clubs->users()->sync([ Auth::user()->id ]);
+
 
         return $this->sendResponse($clubs->toArray(), 'Club saved successfully');
     }

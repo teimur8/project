@@ -26,6 +26,7 @@
     "vue": "^2.5.13",
     "vue-i18n": "^7.3.4",
     "vue-meta": "^1.4.2",
+    "vue-multiselect": "^2.0.8",
     "vue-router": "^3.0.1",
     "vue-tables-2": "^1.3.61",
     "vue2-datatable-component": "^2.2.2",

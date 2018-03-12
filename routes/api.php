@@ -23,9 +23,15 @@ Route::group(['middleware' => 'auth:api'], function () {
 
     Route::resource('users', 'API\UserAPIController');
     Route::resource('clubs', 'API\ClubAPIController');
+
+    Route::get('tables/getData', 'API\TableAPIController@getData');
+    Route::resource('tables', 'API\TableAPIController');
 });
 
 Route::group(['middleware' => 'guest:api'], function () {
+
+    
+
     Route::post('login', 'Auth\LoginController@login');
     Route::post('register', 'Auth\RegisterController@register');
     Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');

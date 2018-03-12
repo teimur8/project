@@ -5,25 +5,25 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model as Model;
 
 /**
- * Class Club
+ * Class Table
  * @package App\Models
- * @version March 11, 2018, 7:47 am UTC
+ * @version March 11, 2018, 10:14 am UTC
  *
  * @property string name
- * @property string city
- * @property string address
+ * @property integer club_id
+ * @property string room
  */
-class Club extends Model
+class Table extends Model
 {
 
-    public $table = 'clubs';
-    
+    public $table = 'tables';
+
 
 
     public $fillable = [
         'name',
-        'city',
-        'address'
+        'club_id',
+        'room'
     ];
 
     /**
@@ -33,8 +33,8 @@ class Club extends Model
      */
     protected $casts = [
         'name' => 'string',
-        'city' => 'string',
-        'address' => 'string'
+        'club_id' => 'integer',
+        'room' => 'string'
     ];
 
     /**
@@ -44,19 +44,17 @@ class Club extends Model
      */
     public static $rules = [
         'name' => 'required',
-        'city' => 'required',
-        'address' => 'required'
+        'club_id' => 'required',
+        'room' => 'required'
     ];
 
 
-    public function users()
+    public function club()
     {
-      return $this->belongsToMany(User::class);
+        return $this
+            ->belongsTo(Club::class, 'club_id', 'id')
+            ->select('id', 'name', 'city', 'address');
     }
 
-    public function tables()
-    {
-      return $this->hasMany(Table::class);
-    }
-    
+
 }

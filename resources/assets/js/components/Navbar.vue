@@ -27,6 +27,12 @@
                {{ $t('clubs.table') }}
               </router-link>
           </li>
+            <li class="nav-item">
+              <router-link :to="{ name: 'tables.table' }" class="dropdown-item pl-3">
+                <fa icon="cog" fixed-width/>
+               {{ $t('tables.table') }}
+              </router-link>
+          </li>
           
         </ul>
 
